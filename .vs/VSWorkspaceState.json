@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\res",
-    "\\src\\res\\shaders",
-    "\\src\\res\\shaders\\rasterizing",
-    "\\src\\res\\shaders\\ray_tracing"
+    ""
   ],
-  "SelectedNode": "\\src\\res\\shaders\\ray_tracing\\ray_tracing.frag",
+  "SelectedNode": "\\src",
   "PreviewInSolutionExplorer": false
 }
