@@ -2,21 +2,21 @@ package scene;
 
 import java.util.ArrayList;
 
-import res.scenes.rasterizing.showcase.BeachScene;
-import res.scenes.rasterizing.showcase.PyramidScene;
-import res.scenes.rasterizing.test.shader.ShaderTestScene;
-import res.scenes.rasterizing.test.shader.SpecularTestScene;
-import res.scenes.rasterizing.test.texture.FilteringTestScene;
-import res.scenes.rasterizing.test.texture.MipMappingTestScene;
-import res.scenes.rasterizing.test.texture.TransparencyTestScene;
-import res.scenes.ray_tracing.showcase.CsgScene;
-import res.scenes.ray_tracing.showcase.MirrorRoomScene;
-import res.scenes.ray_tracing.showcase.RandomSpheresScene;
-import res.scenes.ray_tracing.showcase.RefractionScene;
-import res.scenes.ray_tracing.test.MirrorTestScene;
-import res.scenes.ray_tracing.test.QuadricTestScene;
-import res.scenes.ray_tracing.test.SphereTestScene;
-import res.scenes.ray_tracing.test.TriangleTestScene;
+import scene.rasterizing.showcase.BeachScene;
+import scene.rasterizing.showcase.PyramidScene;
+import scene.rasterizing.test.shader.ShaderTestScene;
+import scene.rasterizing.test.shader.SpecularTestScene;
+import scene.rasterizing.test.texture.FilteringTestScene;
+import scene.rasterizing.test.texture.MipMappingTestScene;
+import scene.rasterizing.test.texture.TransparencyTestScene;
+import scene.rt.showcase.CsgScene;
+import scene.rt.showcase.MirrorRoomScene;
+import scene.rt.showcase.RandomSpheresScene;
+import scene.rt.showcase.RefractionScene;
+import scene.rt.test.MirrorTestScene;
+import scene.rt.test.QuadricTestScene;
+import scene.rt.test.SphereTestScene;
+import scene.rt.test.TriangleTestScene;
 
 /**
  * Stores {@link SceneCollection} objects and

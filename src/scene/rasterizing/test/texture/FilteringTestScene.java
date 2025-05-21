@@ -1,4 +1,4 @@
-package res.scenes.rasterizing.test.texture;
+package scene.rasterizing.test.texture;
 
 import static cgi.Model.*;
 import static org.lwjgl.opengl.GL11.GL_NEAREST;

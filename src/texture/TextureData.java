@@ -126,9 +126,7 @@ public class TextureData {
 	 * @return A {@link InputStream} created from the image file.
 	 */
 	private InputStream createInputStreamFromResourceName(String path) {
-		if (!path.startsWith("/")) {
-			path = "/res/textures/" + path;
-		}
+		path = "/res/textures/" + path;
 		return getClass().getResourceAsStream(path);
 	}
 

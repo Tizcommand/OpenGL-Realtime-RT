@@ -1,8 +1,8 @@
 package io;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 import math.vector.Vector2;
@@ -61,26 +61,23 @@ public class WavefrontObjectReader {
      * Stores data from an <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file</a>
      * within this object's fields.
      * 
-     * @param fileName
-     * The name of the <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file</a>
-     * without its file extension.
+     * @param path
+     * The path to the .obj file without the .obj file extension in the String.
+	 * The path uses "/res/objects/" as the root folder.
      * 
      * @param saveVertexColors
-     * Determines if vertex colors from the <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file</a>
-     * should be saved.
+     * Determines if vertex colors from the .obj file should be saved.
      * 
      * @param saveUVCoordinates
-     * Determines if UV coordinates from the <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file</a>
-     * should be saved.
+     * Determines if UV coordinates from the .obj file should be saved.
      * 
      * @param saveNormals
-     * Determines if normals from the <a href="https://en.wikipedia.org/wiki/Wavefront_.obj_file">.obj file</a>
-     * should be saved.
+     * Determines if normals from the .obj file should be saved.
      */
 	public WavefrontObjectReader(
-		String fileName, boolean saveVertexColors, boolean saveUVCoordinates, boolean saveNormals
+		String path, boolean saveVertexColors, boolean saveUVCoordinates, boolean saveNormals
 	) {
-		String path = "src\\res\\objects\\" + fileName + ".obj";
+		path = "/res/objects/" + path + ".obj";
 		
 		ArrayList<Vector3> unmappedVertexList = new ArrayList<>();
 		ArrayList<Vector3> unmappedVertexColorList = new ArrayList<>();
@@ -92,7 +89,7 @@ public class WavefrontObjectReader {
 		ArrayList<Vector3> unmappedNormalList = new ArrayList<>();
 		ArrayList<Vector3> normalReferenceTriangleList = new ArrayList<>();
 		
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream(path)))) {
         	// save object data in lists
         	String line;
             
@@ -111,7 +108,7 @@ public class WavefrontObjectReader {
                     	if(lineParts.length < 7) {
                     		throw new IOException(
                     			"Saving vertex colors was requested, but vertex without color was found in" +
-                    			fileName + ".obj."
+                    			path + ".obj."
                     		);
                     	} else {
                     		float[] color = new float[3];
@@ -165,7 +162,7 @@ public class WavefrontObjectReader {
             
             // save vertices and their triangle references in arrays
             if(unmappedVertexList.size() == 0) {
-            	throw new IOException(fileName + ".obj contains no vertices.");
+            	throw new IOException(path + ".obj contains no vertices.");
             }
             
             unmappedVertices = new Vector3[unmappedVertexList.size()];
@@ -184,7 +181,7 @@ public class WavefrontObjectReader {
             	if(unmappedUVCoordinateList.size() == 0) {
                 	throw new IOException(
                 		"Saving UV coordinates was requested, but no UV coordinates were found inside " +
-                		fileName + ".obj."
+                		path + ".obj."
                 	);
                 }
             	
@@ -198,7 +195,7 @@ public class WavefrontObjectReader {
             if(saveNormals) {
                 if(unmappedNormalList.size() == 0) {
                 	throw new IOException(
-                		"Saving normals was requested, but no normals were found inside " + fileName + ".obj."
+                		"Saving normals was requested, but no normals were found inside " + path + ".obj."
                 	);
                 }
             	

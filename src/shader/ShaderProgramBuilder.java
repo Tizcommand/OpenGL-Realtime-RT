@@ -23,6 +23,7 @@ import static org.lwjgl.opengl.GL20.glUniform1i;
 import static org.lwjgl.opengl.GL32.GL_GEOMETRY_SHADER;
 import static org.lwjgl.opengl.GL20.glUseProgram;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -196,17 +197,39 @@ public class ShaderProgramBuilder {
 		if(includeStart != -1) {
 			int includeEnd = source.indexOf('\n', includeStart);
 			String include = source.substring(includeStart, includeEnd);
-			String includeResourceName = include.split("\"")[1];
+			String includeShaderName = include.split("\"")[1];
 			
-			String[] resourcePathElements = path.split("/");
-			String resourceFolderPath = "";
+			String[] pathSplit = path.split("/");
+			String sourceFolderPath = "";
 			
-			for(int i = 0; i < resourcePathElements.length - 1; i++) {
-				resourceFolderPath += resourcePathElements[i] + "/";
+			for(int i = 0; i < pathSplit.length - 1; i++) {
+				sourceFolderPath += pathSplit[i] + "/";
 			}
 			
-			String includeResourcePath = resourceFolderPath + includeResourceName;
-			InputStream includeInputStream = getInputStreamFromResourceName(includeResourcePath);
+			String includeShaderPath = sourceFolderPath + includeShaderName;
+			
+			if(includeShaderPath.contains("../")) {
+				String[] includeShaderPathSplit = includeShaderPath.split("/");
+				includeShaderPath = "";
+				
+				for(int i = 0; i < includeShaderPathSplit.length; i++) {
+					if(
+						(
+							i + 1 < includeShaderPathSplit.length &&
+							!includeShaderPathSplit[i].equals("..") &&
+							!includeShaderPathSplit[i + 1].equals("..")
+						) || i + 1 >= includeShaderPathSplit.length
+					) {
+						includeShaderPath += includeShaderPathSplit[i];
+						
+						if(i + 1 < includeShaderPathSplit.length) {
+							includeShaderPath += "/";
+						}
+					}
+				}
+			}
+			
+			InputStream includeInputStream = getInputStreamFromResourceName(includeShaderPath);
 			
 			String includeSource;
 			
@@ -214,7 +237,7 @@ public class ShaderProgramBuilder {
 				includeSource = in.useDelimiter("\\A").next();
 			}
 			
-			includeSource = processInclude(includeResourcePath, includeSource);
+			includeSource = processInclude(includeShaderPath, includeSource);
 			source = source.replaceFirst(include, includeSource);
 		}
 		
@@ -232,7 +255,17 @@ public class ShaderProgramBuilder {
 	 * The input stream for the given shader.
 	 */
 	protected InputStream getInputStreamFromResourceName(String path) {
-		return getClass().getResourceAsStream("/res/shaders/" + path);
+		InputStream inputStream = getClass().getResourceAsStream("/res/shaders/" + path);
+		
+		try {
+			if(inputStream == null) {
+				throw new IOException("/res/shaders/" + path + " could not be accessed.");
+			}
+		} catch(IOException e) {
+			e.printStackTrace();
+		}
+		
+		return inputStream;
 	}
 	
 	/**

@@ -1,4 +1,4 @@
-package res.scenes.ray_tracing.showcase;
+package scene.rt.showcase;
 
 import static cgi.ConstructiveSolidGeometry.CSG_DIFFERENCE;
 import static cgi.ConstructiveSolidGeometry.CSG_INTERSECTION;

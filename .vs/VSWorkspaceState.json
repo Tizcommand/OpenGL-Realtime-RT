@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\res",
+    "\\src\\res\\shaders",
+    "\\src\\res\\shaders\\ray_tracing"
   ],
-  "SelectedNode": "\\src",
+  "SelectedNode": "\\src\\res\\shaders\\ray_tracing\\object_information.glsl",
   "PreviewInSolutionExplorer": false
 }

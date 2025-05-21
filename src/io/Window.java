@@ -113,7 +113,7 @@ public class Window {
 		viewportWidth = width;
 		viewportHeight = height;
 		
-		long window = glfwCreateWindow(width, height, "RT OpenGL", NULL, NULL);
+		long window = glfwCreateWindow(width, height, "OpenGL-Realtime-RT", NULL, NULL);
 		if (window == NULL) throw new RuntimeException("Failed to create the GLFW window");
 		
 		// center window

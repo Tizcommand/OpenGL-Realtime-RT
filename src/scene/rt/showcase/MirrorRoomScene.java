@@ -1,4 +1,4 @@
-package res.scenes.ray_tracing.showcase;
+package scene.rt.showcase;
 
 import static cgi.Model.*;
 import static shader.ShaderProgramStorage.PROGRAM_RAY_TRACING;

@@ -1,4 +1,4 @@
-package res.scenes.ray_tracing.test;
+package scene.rt.test;
 
 import static texture.DefaultTextures.TEXTURE_BLACK;
 

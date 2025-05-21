@@ -1,4 +1,4 @@
-package res.scenes.rasterizing.test.shader;
+package scene.rasterizing.test.shader;
 
 import static cgi.Model.*;
 import static shader.ShaderProgramStorage.*;

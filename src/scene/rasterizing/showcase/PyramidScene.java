@@ -1,4 +1,4 @@
-package res.scenes.rasterizing.showcase;
+package scene.rasterizing.showcase;
 
 import static cgi.Model.*;
 import static shader.ShaderProgramStorage.*;

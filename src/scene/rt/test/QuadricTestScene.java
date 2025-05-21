@@ -1,4 +1,4 @@
-package res.scenes.ray_tracing.test;
+package scene.rt.test;
 
 import static cgi.ConstructiveSolidGeometry.*;
 import static shader.ShaderProgramStorage.PROGRAM_RAY_TRACING;

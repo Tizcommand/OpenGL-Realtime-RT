@@ -46,7 +46,7 @@ public class ShaderProgramStorage {
 	 * using the <a href="https://graphicscompendium.com/gamedev/15-pbr">Cook Torrance lighting model</a>.
 	 */
 	public static final RayTracingShaderProgramBuilder PROGRAM_RAY_TRACING =
-		new RayTracingShaderProgramBuilder("ray_tracing/ray_tracing", false);
+		new RayTracingShaderProgramBuilder("rt/ray_tracing", false);
 	
 	/* Texture Shader */
 	
