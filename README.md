@@ -15,7 +15,29 @@ If you want to compile the program yourself, you will need a Java 17 JDK.
 
 # Controls
 
+## Window
 
+Press the left mouse button while hovering over the window content with the mouse cursor, to lock the mouse cursor into the window.
+
+Press the left mouse button while the mouse is locked inside the window to unlock mouse cursor again.
+
+Press Alt+Enter or F11 to toogle fullscreen mode.
+
+## Camera
+
+Move the mouse while the mouse cursor is locked inside the window to look around.
+
+Press W to move forward.
+
+Press A to move left.
+
+Press S to move backward.
+
+Press D to move right.
+
+Hold Alt to move slowly.
+
+# Thanks
 
 Thanks go to my computer graphics teacher [Prof. Dr. Tobias Lenz](https://www.htw-berlin.de/hochschule/personen/person/?eid=9042) from the HTW, for getting me into computer graphics and helping me realizing the project.
 Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reusch/) for helping to implement the [WavefrontObjectReader class](https://github.com/Tizcommand/OpenGL-Realtime-RT/blob/main/src/io/WavefrontObjectReader.java).
