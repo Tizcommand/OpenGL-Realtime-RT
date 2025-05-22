@@ -2,8 +2,8 @@
 This Java application renders raytraced 3D objects with reflections, refractions and shadows in realtime.
 The rendering is handled through software raytracing via OpenGL.
 
-![](https://...Lamp Room.png) | ![](https://...Refraction.png)
-![](https://...CSGs.png) | ![](https://...CSG & Quadric & Sphere.png)
+![](https://...Lamp_Room.png) | ![](https://...Refraction.png)
+![](https://...CSG0.png) | ![](https://...CSG1.png)
 
 If you want to try the program out without downloading the repository and compiling the program,
 you can download [this zip archive](https://1drv.ms/u/c/a225810b411f051b/EaiviYQSUQpLkFYNQyHDpO4BTcS41JS3FmwQuADKWUgudw?e=4lzzD3) extract it and run the executable contained within.
