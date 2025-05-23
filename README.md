@@ -1,6 +1,7 @@
 # OpenGL-Realtime-RT
-This Java application renders raytraced 3D objects with reflections, refractions and shadows in realtime.
+This Java application renders scenes of raytraced 3D objects with reflections, refractions and shadows in realtime.
 The program uses the OpenGL graphics API for rendering raytraced 3D objects without raytracing hardware.
+The program also contains some scenes which are rendered via rasterization. These scenes are mostly used for testing purposes.
 
 <p align="left">
   <img src="images/Lamp_Room.png" width="45%" alt="Screenshot of a room with mirrors, a brick wall, a reflective wood floor and a ceiling lamp."/>
@@ -12,6 +13,8 @@ The program uses the OpenGL graphics API for rendering raytraced 3D objects with
 Running the program requires a OpenGL 4.3 compatible GPU. If you want to try the program out without downloading the repository and compiling the program,
 you can download [this zip archive](https://1drv.ms/u/c/a225810b411f051b/EaiviYQSUQpLkFYNQyHDpO4BTcS41JS3FmwQuADKWUgudw?e=4lzzD3) and run the executable contained by the extracted folder.
 If you want to compile the program yourself, you will need a Java 17 JDK, like the one contained by the zip archive. 
+
+Note that the program may need a minute to compile shaders and load textures, when starting the program and when switching between scenes.
 
 Thanks go to my computer graphics teacher [Prof. Dr. Tobias Lenz](https://www.htw-berlin.de/hochschule/personen/person/?eid=9042) from the HTW, for getting me into computer graphics and helping me to realize the project.
 Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reusch/) for helping me to implement the [WavefrontObjectReader class](https://github.com/Tizcommand/OpenGL-Realtime-RT/blob/main/src/io/WavefrontObjectReader.java).
@@ -56,7 +59,16 @@ Press ↑ to switch to the next scene collection.
 
 Press ↓ to switch to the previous scene collection.
 
-Note that some scene collections contain scenes which are rendered via rasterization. These scenes are mostly used for testing purposes.
+## Program Information
+
+Press F3 to toogle the visibility of program information.
+
+Press Ctrl+→, while program information is visible, to switch to the next type of program information.
+
+Press Ctrl+←, while program information is visible, to switch to the previous type of program information.
+
+The 3 types of informations that can be switched between are "Scene & Performance Information", "Raytracing Information" and "Render Settings".
+"Raytracing Information" can only be displayed in raytracing scenes.
 
 ## Render Settings
 
@@ -90,7 +102,7 @@ Press Tab+↑ while dynamic resolution scaling is toogled off to increase the re
 
 Press Tab+↓ while dynamic resolution scaling is toogled off to decrease the render resolution.
 
-### Miscellaneous
+### Render Settings
 
 Press Ctrl+L to toogle rendering of lights as visible objects. Lights used for raytracing scenes are shown as spheres, while lights used for rasterizing scenes are shown as squares.
 In the scene with the lamp hanging from the ceiling, rendering of lights as visible objects is forced on.
@@ -102,11 +114,3 @@ Press Ctrl+G to toogle gamma correction.
 Press Ctrl+A to toogle ambient light.
 
 <img src="images/Ambient_Light.png" width="45%" alt="Image of a reflective sphere, comparing how the sphere looks with and without ambient light."/>
-
-## Debug
-
-Press F3 to toogle the visibility of debug information.
-
-Press Ctrl+→, while debug information is visible, to switch to the next type of debug information.
-
-Press Ctrl+←, while debug information is visible, to switch to the previous type of debug information.
