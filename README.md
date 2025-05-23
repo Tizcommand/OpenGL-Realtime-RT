@@ -97,7 +97,11 @@ In the scene with the lamp hanging from the ceiling, rendering of lights as visi
 
 Press Ctrl+G to toogle gamma correction.
 
+<img src="images/Gamma_Correction.png" width="45%" alt="Image of the lamp room, comparing how the room looks with and without gamma correction."/>
+
 Press Ctrl+A to toogle ambient light.
+
+<img src="images/Ambient_Light.png" width="45%" alt="Image of a reflective sphere, comparing how the sphere looks with and without ambient light."/>
 
 ## Debug
 
