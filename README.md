@@ -70,7 +70,7 @@ Press Ctrl+←, while program information is visible, to switch to the previous 
 The 3 types of informations that can be switched between are "Scene & Performance Information", "Raytracing Information" and "Render Settings".
 "Raytracing Information" can only be displayed in raytracing scenes.
 
-## Render Settings
+## Settings
 
 ### Scene Object Speed
 
