@@ -1,6 +1,6 @@
 # OpenGL-Realtime-RT
 This Java application renders raytraced 3D objects with reflections, refractions and shadows in realtime.
-The rendering is handled through software raytracing via OpenGL.
+The program uses the OpenGL graphics API for rendering raytraced 3D objects without raytracing hardware.
 
 <p align="left">
   <img src="images/Lamp_Room.png" width="45%" alt="Screenshot of a room with mirrors, a brick wall, a reflective wood floor and a ceiling lamp."/>
@@ -10,25 +10,25 @@ The rendering is handled through software raytracing via OpenGL.
 </p>
 
 Running the program requires a OpenGL 4.3 compatible GPU. If you want to try the program out without downloading the repository and compiling the program,
-you can download [this zip archive](https://1drv.ms/u/c/a225810b411f051b/EaiviYQSUQpLkFYNQyHDpO4BTcS41JS3FmwQuADKWUgudw?e=4lzzD3) and run the executable contained in the extracted folder.
-If you want to compile the program yourself, you will need a Java 17 JDK, like the one contained in the zip archive. 
+you can download [this zip archive](https://1drv.ms/u/c/a225810b411f051b/EaiviYQSUQpLkFYNQyHDpO4BTcS41JS3FmwQuADKWUgudw?e=4lzzD3) and run the executable contained by the extracted folder.
+If you want to compile the program yourself, you will need a Java 17 JDK, like the one contained by the zip archive. 
 
 Thanks go to my computer graphics teacher [Prof. Dr. Tobias Lenz](https://www.htw-berlin.de/hochschule/personen/person/?eid=9042) from the HTW, for getting me into computer graphics and helping me to realize the project.
-Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reusch/) for helping to implement the [WavefrontObjectReader class](https://github.com/Tizcommand/OpenGL-Realtime-RT/blob/main/src/io/WavefrontObjectReader.java).
+Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reusch/) for helping me to implement the [WavefrontObjectReader class](https://github.com/Tizcommand/OpenGL-Realtime-RT/blob/main/src/io/WavefrontObjectReader.java).
 
 # Controls
 
 ## Window
 
-Press the left mouse button while hovering over the window content with the mouse cursor, to lock the mouse cursor into the window.
+Press the left mouse button, while hovering over the window content with the mouse cursor, to lock the mouse cursor into the window.
 
-Press the left mouse button while the mouse is locked inside the window to unlock mouse cursor again.
+Press the left mouse button, while the mouse is locked inside the window, to unlock the mouse cursor again.
 
 Press Alt+Enter or F11 to toogle fullscreen mode.
 
 ## Camera
 
-Move the mouse while the mouse cursor is locked inside the window to look around.
+Move the mouse, while the mouse cursor is locked inside the window, to look around.
 
 Hold W to move forward.
 
@@ -42,7 +42,7 @@ Hold space to move up.
 
 Hold shift to move down.
 
-Hold Alt while moving to move slowly.
+Hold Alt, while moving, to move slowly.
 
 Press Ctrl+R to reset the camera to its default position.
 
@@ -74,14 +74,14 @@ Press Ctrl+V to toogle VSync.
 
 Press Alt+↑ to increase the framerate limit.
 
-Press Alt+↓ to increase the framerate limit.
+Press Alt+↓ to decrease the framerate limit.
 
 The limits between which can be switched are 30, 60, 120 and unlimited. The default limit is 60.
 Note that you can only change the limit to 60 or 120 if your monitor's refresh rate is above 60 or 120 respectively, otherwise 60/120 are skipped when increasing or decreasing the limit.
 
 ### Render Resolution
 
-Press Ctrl+D to toogle dynamic resolution scaling. The dynamic resolution scaler targets the framerate limit or the monitor's refresh rate if the framerate limit is set to unlimited.
+Press Ctrl+D to toogle dynamic resolution scaling. The dynamic resolution scaler targets the framerate limit or the monitor's refresh rate, if the framerate limit is set to unlimited.
 Note that the dynamic resolution scaler can not target more than 250fps.
 
 Press Ctrl+U to switch between nearest neighbour and linear upscaling.
@@ -92,8 +92,8 @@ Press Tab+↓ while dynamic resolution scaling is toogled off to decrease the re
 
 ### Miscellaneous
 
-Press Ctrl+L to toogle rendering of lights as visible objects. Lights used for ray tracing scenes are shown as spheres, while lights used for rasterizing scenes are shown as squares.
-In the scene with lamp hanging from the ceiling, rendering of lights as visible objects is forced on.
+Press Ctrl+L to toogle rendering of lights as visible objects. Lights used for raytracing scenes are shown as spheres, while lights used for rasterizing scenes are shown as squares.
+In the scene with the lamp hanging from the ceiling, rendering of lights as visible objects is forced on.
 
 Press Ctrl+G to toogle gamma correction.
 
@@ -103,6 +103,6 @@ Press Ctrl+A to toogle ambient light.
 
 Press F3 to toogle the visibility of debug information.
 
-Press Ctrl+→ while debug information is visible to switch to the next type of debug information.
+Press Ctrl+→, while debug information is visible, to switch to the next type of debug information.
 
-Press Ctrl+← while debug information is visible to switch to the previous type of debug information.
+Press Ctrl+←, while debug information is visible, to switch to the previous type of debug information.
