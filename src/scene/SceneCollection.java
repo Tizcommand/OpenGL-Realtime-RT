@@ -2,6 +2,8 @@ package scene;
 
 import java.util.ArrayList;
 
+import render.TextRenderer;
+
 /**
  * Stores an {@link ArrayList} of {@link Scene} objects and
  * provides methods to switch between which of these {@link Scene} objects issues rendering.
@@ -9,6 +11,12 @@ import java.util.ArrayList;
  * @author Tizian Kirchner
  */
 public class SceneCollection {
+	/**
+	 * Displayed by the {@link TextRenderer} when this {@link SceneCollection}
+	 * is the {@link SceneCollectionStorage}'s currentSceneCollection.
+	 */
+	String name = "Unnamed SceneCollection";
+	
 	/**
 	 * Stores the {@link Scene} objects that can be switched between.
 	 */
@@ -26,9 +34,12 @@ public class SceneCollection {
 	private int currentSceneIndex;
 	
 	/**
-	 * Constructs a new scene collection.
+	 * Constructs a new {@link SceneCollection}.
+	 * 
+	 * @param name See {@link SceneCollection#name}.
 	 */
-	public SceneCollection() {
+	public SceneCollection(String name) {
+		this.name = name;
 		scenes = new ArrayList<>();
 		currentSceneIndex = 0;
 	}
@@ -87,6 +98,13 @@ public class SceneCollection {
 	 */
 	public void renderCurrentScene() { 
 		currentScene.safeRender();
+	}
+	
+	/**
+	 * See {@link SceneCollection#name}.
+	 */
+	public String getName() {
+		return name;
 	}
 	
 	/**

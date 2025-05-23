@@ -47,27 +47,27 @@ public class SceneCollectionStorage {
 	 * and adds them to the {@link #sceneCollections SceneCollection list}.
 	 */
 	public static void init() {
-		SceneCollection rtShowcaseScenes = new SceneCollection();
+		SceneCollection rtShowcaseScenes = new SceneCollection("Raytracing Showcase Scenes");
 		rtShowcaseScenes.addScene(new MirrorRoomScene());
 		rtShowcaseScenes.addScene(new RefractionScene());
 		rtShowcaseScenes.addScene(new RandomSpheresScene());
 		rtShowcaseScenes.addScene(new CsgScene());
 		
-		SceneCollection rtTestScenes = new SceneCollection();
+		SceneCollection rtTestScenes = new SceneCollection("Raytracing Test Scenes");
 		rtTestScenes.addScene(new SphereTestScene());
 		rtTestScenes.addScene(new QuadricTestScene());
 		rtTestScenes.addScene(new TriangleTestScene());
 		rtTestScenes.addScene(new MirrorTestScene());
 		
-		SceneCollection showcaseScenes = new SceneCollection();
+		SceneCollection showcaseScenes = new SceneCollection("Rasterizing Showcase Scenes");
 		showcaseScenes.addScene(new PyramidScene());
 		showcaseScenes.addScene(new BeachScene());
 		
-		SceneCollection shaderTestScenes = new SceneCollection();
+		SceneCollection shaderTestScenes = new SceneCollection("Rasterizing Shader Test Scenes");
 		shaderTestScenes.addScene(new ShaderTestScene());
 		shaderTestScenes.addScene(new SpecularTestScene());
 		
-		SceneCollection textureTestScenes = new SceneCollection();
+		SceneCollection textureTestScenes = new SceneCollection("Rasterizing Texture Test Scenes");
 		textureTestScenes.addScene(new FilteringTestScene());
 		textureTestScenes.addScene(new MipMappingTestScene());
 		textureTestScenes.addScene(new TransparencyTestScene());
@@ -147,6 +147,13 @@ public class SceneCollectionStorage {
 		
 		currentSceneCollection = sceneCollections.get(currentSceneCollectionIndex);
 		currentSceneCollection.getCurrentScene().prepareLoad();
+	}
+	
+	/**
+	 * See {@link SceneCollectionStorage#currentSceneCollection}.
+	 */
+	public static SceneCollection getCurrentSceneCollection() {
+		return currentSceneCollection;
 	}
 	
 	/**

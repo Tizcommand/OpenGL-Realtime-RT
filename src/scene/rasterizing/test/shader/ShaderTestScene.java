@@ -26,6 +26,8 @@ public class ShaderTestScene extends RasterizingScene {
 
 	@Override
 	protected void init() {
+		
+		
 		// initialize textures
 		graySand = new TextureData("GraySand/HighRes.png", 16);
 		

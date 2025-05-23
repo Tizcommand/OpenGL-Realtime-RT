@@ -11,7 +11,7 @@ import settings.RayTracingSettings;
  * 
  * @author Tizian Kirchner
  */
-public abstract class RayTracingScene extends Scene {
+public abstract class RayTracingScene extends Scene {	
 	/**
 	 * Stores the {@link RayTracingSettings} that will be applied
 	 * when rendering the objects of this {@link RayTracingScene}.

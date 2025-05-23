@@ -101,17 +101,22 @@ public class TextBuilder {
 	 * For more details on the parameters see {@link TextBuilder#updateText}.
 	 */
 	public static void showPerformanceInformation(double frameTime, double renderTime, double bufferSwapTime) {
-		int fps = FrameCounter.getFramesPerSecond();
-		int fpsLimit = FrameLimiter.getFpsLimit();
+		String sceneCollectionName = SceneCollectionStorage.getCurrentSceneCollection().getName();
+		String upscalingType = (ResolutionScaler.getUpscale() == GL_NEAREST ? "Nearest Neighbour" : "Linear");
 		
 		int viewportWidth = Window.getViewportWidth(); 
 		int viewportHeight = Window.getViewportHeight();
 		int renderWidth = ResolutionScaler.getRenderWidth(); 
 		int renderHeight = ResolutionScaler.getRenderHeight();
 		
-		String upscalingType = (ResolutionScaler.getUpscale() == GL_NEAREST ? "Nearest Neighbour" : "Linear");
-		
+		int fps = FrameCounter.getFramesPerSecond();
+		int fpsLimit = FrameLimiter.getFpsLimit();
 		DecimalFormat twoDigits = new DecimalFormat("00.00", new DecimalFormatSymbols(Locale.ENGLISH));
+		
+		String informationTypeStr = "Scene & Performance Information";
+		
+		String sceneNameStr = "Scene: " + SceneCollectionStorage.getCurrentScene().getClass().getSimpleName();
+		String sceneCollectionNameStr = "SceneCollection: " + sceneCollectionName;
 		
 		String outResStr		= "Output Resolution: " + viewportWidth + "x" + viewportHeight;
 		String renderResStr 	= "Render Resolution: " + renderWidth + "x" + renderHeight;
@@ -130,6 +135,8 @@ public class TextBuilder {
 		}
 		
 		TextRenderer.setText(
+			informationTypeStr + "\n \n" +
+			sceneNameStr + "\n" + sceneCollectionNameStr + "\n \n" +
 			outResStr + "\n" + renderResStr + "\n \n" +
 			fpsStr + "\n" + frameTimeStr + "\n" + renderTimeStr + "\n" + swapTimeStr + "\n \n" +
 			vSyncStr  + "\n" + upscaleStr + "\n" + drsStr
@@ -159,6 +166,8 @@ public class TextBuilder {
 		int triangleCount, int sphereCount, int quadricCount, int csgCount,
 		RayTracingSettings rtSettings, boolean useUniformBuffer, int triangleBufferSize
 	) {
+		String informationTypeStr = "Raytracing Information";
+		
 		String lights    = "Lights                : " + lightCount;
 		String materials = "Materials             : " + materialCount;
 		String textures  = "Cook Torrance Textures: " + ctTextureCount;
@@ -186,6 +195,7 @@ public class TextBuilder {
 		String refractionShadowString    = "Refraction Shadow Depth  : " + rtSettings.getRefractionShadowDepth();
 		
 		TextRenderer.setText(
+			informationTypeStr + "\n \n" +
 			lights + "\n" + materials + "\n" + textures + "\n \n" +
 			triangles + "\n" + spheres + "\n" + quadrics + "\n" + csgs + "\n \n" +
 			lightingString + "\n" + shadowRayString + "\n" + shadowTransparencyString + "\n \n" +
@@ -200,10 +210,15 @@ public class TextBuilder {
 	public static void showRenderSettings() {
 		boolean forceLightRendering = SceneCollectionStorage.getCurrentScene().isForcingLightRendering();
 		
+		String informationTypeStr = "Render Settings";
+		
 		String gammaCorrectionStr   = "Gamma Correction: " + RenderSettings.isGammaCorrection();
 		String ambientLightStr      = "Ambient Light   : " + RenderSettings.isAmbientLight();
 		String lightRenderingStr	= "Light Rendering : " + (RenderSettings.isLightRendering() || forceLightRendering);
 		
-		TextRenderer.setText(gammaCorrectionStr + "\n" + ambientLightStr + "\n" + lightRenderingStr);
+		TextRenderer.setText(
+			informationTypeStr + "\n \n" +
+			gammaCorrectionStr + "\n" + ambientLightStr + "\n" + lightRenderingStr
+		);
 	}
 }
