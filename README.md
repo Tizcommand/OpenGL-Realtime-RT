@@ -88,8 +88,8 @@ Press Alt+↑ to increase the framerate limit.
 
 Press Alt+↓ to decrease the framerate limit.
 
-The limits between which can be switched are 30, 60, 120 and unlimited. The default limit is 60.
-Note that you can only change the limit to 60 or 120 if your monitor's refresh rate is above 60 or 120 respectively, otherwise 60/120 are skipped when increasing or decreasing the limit.
+The framerate limits between which can be switched are 30, 60, 120 and unlimited. The default limit is unlimited or 60, if your monitor's refresh rate is above 60hz.
+The limit can only be changed to 60 or 120 if your monitor's refresh rate is above 60hz or 120hz respectively.
 
 ### Render Resolution
 
@@ -98,9 +98,9 @@ Note that the dynamic resolution scaler can not target more than 250fps.
 
 Press Ctrl+U to switch between nearest neighbour and linear upscaling.
 
-Press Tab+↑ while dynamic resolution scaling is toogled off to increase the render resolution.
+Press Tab+↑, while dynamic resolution scaling is toogled off, to increase the render resolution.
 
-Press Tab+↓ while dynamic resolution scaling is toogled off to decrease the render resolution.
+Press Tab+↓, while dynamic resolution scaling is toogled off, to decrease the render resolution.
 
 ### Render Settings
 
