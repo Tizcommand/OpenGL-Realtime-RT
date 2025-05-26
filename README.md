@@ -1,20 +1,20 @@
 # OpenGL-Realtime-RT
 This Java application renders scenes of raytraced 3D objects with reflections, refractions and shadows in realtime.
-The program uses the OpenGL graphics API for rendering raytraced 3D objects without raytracing hardware.
+The program uses the OpenGL graphics API and renders raytraced 3D objects without raytracing hardware.
 The program also contains some scenes which are rendered via rasterization. These scenes are mostly used for testing purposes.
 
 <p align="left">
-  <img src="images/Lamp_Room.png" width="45%" alt="Screenshot of a room with mirrors, a brick wall, a reflective wood floor and a ceiling lamp."/>
-  <img src="images/Refraction.png" width="45%" alt="Screenshot of a orange sphere and a glass sphere through which the refracted view of a green sphere is seen."/>
-  <img src="images/CSG0.png" width="45%" alt="Screenshot of a thick circle with a hole throwing a shadow on a red and green 3D shape."/>
-  <img src="images/CSG1.png" width="45%" alt="Screenshot of a yellow and purple 3D shape, a pole like 3D shape and a sphere."/>
+  <img src="images/Lamp_Room.png" width="45%" alt="A room with mirrors, a brick wall, a reflective wood floor and a ceiling lamp."/>
+  <img src="images/Refraction.png" width="45%" alt="A orange sphere and a glass sphere through which the refracted view of a green sphere is seen."/>
+  <img src="images/CSG0.png" width="45%" alt="A thick circle with a hole throwing a shadow on a red and green 3D shape."/>
+  <img src="images/CSG1.png" width="45%" alt="A yellow and purple 3D shape, a pole like 3D shape and a sphere."/>
 </p>
 
 Running the program requires a OpenGL 4.3 compatible GPU. If you want to try the program out without downloading the repository and compiling the program,
 you can download [this zip archive](https://1drv.ms/u/c/a225810b411f051b/EaiviYQSUQpLkFYNQyHDpO4BTcS41JS3FmwQuADKWUgudw?e=4lzzD3) and run the executable contained by the extracted folder.
 If you want to compile the program yourself, you will need a Java 17 JDK, like the one contained by the zip archive. 
 
-Note that the program may need a minute to compile shaders and load textures, when starting the program and when switching between scenes.
+Note that the program may need a minute to compile shaders and load textures, when starting the program and when switching to scenes which are loaded for the first time.
 
 Thanks go to my computer graphics teacher [Prof. Dr. Tobias Lenz](https://www.htw-berlin.de/hochschule/personen/person/?eid=9042) from the HTW, for getting me into computer graphics and helping me to realize the project.
 Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reusch/) for helping me to implement the [WavefrontObjectReader class](https://github.com/Tizcommand/OpenGL-Realtime-RT/blob/main/src/io/WavefrontObjectReader.java).
@@ -25,7 +25,7 @@ Thanks as well to my friend [Bernd Reusch](https://www.linkedin.com/in/bernd-reu
 
 Press the left mouse button, while hovering over the window content with the mouse cursor, to lock the mouse cursor into the window.
 
-Press the left mouse button, while the mouse is locked inside the window, to unlock the mouse cursor again.
+Press the left mouse button, while the mouse cursor is locked inside the window, to unlock the mouse cursor again.
 
 Press Alt+Enter or F11 to toogle fullscreen mode.
 
